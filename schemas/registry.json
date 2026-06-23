@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "baseUrl": {
+      "$ref": "#/definitions/__schema0"
+    },
+    "templates": {
+      "$ref": "#/definitions/__schema1"
+    }
+  },
+  "required": [
+    "templates"
+  ],
+  "additionalProperties": false,
+  "description": "Root registry document consumed by BLOX when resolving templates and blocks.",
+  "definitions": {
+    "__schema0": {
+      "type": "string",
+      "description": "Optional base URL prefix used to resolve relative source values in template and block entries."
+    },
+    "__schema1": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "#/definitions/__schema2"
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/__schema3"
+      },
+      "description": "Top-level templates catalog available in this registry document."
+    },
+    "__schema2": {
+      "type": "string"
+    },
+    "__schema3": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "$ref": "#/definitions/__schema4"
+        },
+        "tags": {
+          "$ref": "#/definitions/__schema5"
+        },
+        "source": {
+          "$ref": "#/definitions/__schema7"
+        },
+        "blocks": {
+          "$ref": "#/definitions/__schema8"
+        }
+      },
+      "required": [
+        "source"
+      ],
+      "additionalProperties": false,
+      "description": "Registry metadata describing a single template entry."
+    },
+    "__schema4": {
+      "type": "string",
+      "description": "Optional summary shown to users when listing or selecting this template."
+    },
+    "__schema5": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/__schema6"
+      },
+      "description": "Optional categorization labels used for search, filtering, or grouping."
+    },
+    "__schema6": {
+      "type": "string"
+    },
+    "__schema7": {
+      "type": "string",
+      "description": "Repository URL or local source path used to fetch this template definition and files."
+    },
+    "__schema8": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "#/definitions/__schema9"
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/__schema10"
+      },
+      "description": "Optional nested block catalog that can be added from this template namespace."
+    },
+    "__schema9": {
+      "type": "string"
+    },
+    "__schema10": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "$ref": "#/definitions/__schema11"
+        },
+        "tags": {
+          "$ref": "#/definitions/__schema12"
+        },
+        "source": {
+          "$ref": "#/definitions/__schema14"
+        },
+        "destination": {
+          "$ref": "#/definitions/__schema15"
+        }
+      },
+      "required": [
+        "source"
+      ],
+      "additionalProperties": false,
+      "description": "Registry metadata describing a single block entry."
+    },
+    "__schema11": {
+      "type": "string",
+      "description": "Optional summary shown to users when listing or selecting this block."
+    },
+    "__schema12": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/__schema13"
+      },
+      "description": "Optional categorization labels used for search, filtering, or grouping."
+    },
+    "__schema13": {
+      "type": "string"
+    },
+    "__schema14": {
+      "type": "string",
+      "description": "Repository URL or local source path used to fetch this block definition and files."
+    },
+    "__schema15": {
+      "type": "string",
+      "description": "Optional relative destination path where this block should be materialized in the target project."
+    }
+  },
+  "title": "Blox Registry Definition",
+  "$id": "https://raw.githubusercontent.com/Naseej-its/blox/main/schemas/registry-schema.json"
+}
