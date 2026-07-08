@@ -1,0 +1,25 @@
+{
+    "name": "blox-cli",
+    "description": "BLOX CLI plus registry-first feature triage: add capability, install block, integration, widget, or UI slice—always discover blocks via get-blocks-context before blox add or custom code. Full command reference (init, add, update, conf, migrate, detach, contribute, upgrade).",
+    "version": "1.0.0",
+    "cliCompatibility": ">=1.0.0 <=2.0.0",
+    "commands": [
+        "blox"
+    ],
+    "tags": [
+        "blox",
+        "cli",
+        "blox-cli",
+        "feature",
+        "capability",
+        "integration",
+        "install-block",
+        "registry",
+        "block-discovery",
+        "blox-add",
+        "registry-first"
+    ],
+    "agents": [
+        "generic"
+    ]
+}
