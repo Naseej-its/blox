@@ -1,0 +1,23 @@
+{
+  "skill_name": "blox-wizard",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a BLOX wizard for my template that runs during init. It should ask for the project name, whether to install Storybook, and which optional features to enable, then update the project files accordingly.",
+      "expected_output": "The agent should identify the template root as the target, validate that it contains .blox, choose the init lifecycle hook as the execution path, and create a structured wizard in scripts/wizard/ with questions.ts, index.ts, and scripts/*. The implementation should use @naseej/blox/sdk prompts, resolve scripts from answers, execute scripts sequentially in question order, ensure the SDK dependency exists, and report files and hook wiring clearly.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Add an interactive wizard for the authentication BLOX block, but do not run it from a lifecycle hook. Wire it into the existing project script mechanism instead. The wizard should ask which API environment to use, whether mock data should be seeded, and whether analytics should be enabled.",
+      "expected_output": "The agent should identify blocks/authentication as the target, validate that the block directory exists, use blocks/authentication/scripts/wizard/ by default unless the user overrides it, and generate questions.ts, index.ts, and scripts/* under that block target. It should avoid inventing a new wizard engine, orchestrate prompt collection in index.ts with @naseej/blox/sdk, keep project modifications in scripts/*, and explain how the existing project command invokes the wizard.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Create a wizard for the authentication block under custom/setup/. It should ask for the package manager, whether Tailwind should be installed, and which example pages to include. This wizard should be invoked manually. If @naseej/blox is missing, install it with the package manager already used by the repo.",
+      "expected_output": "The agent should identify blocks/authentication as the target, resolve the custom location to blocks/authentication/custom/setup/, and create the same structured layout (questions.ts, index.ts, scripts/*) in that custom directory. It should keep execution separate by documenting manual invocation rather than wiring a hook, detect package manager from project signals, install @naseej/blox only if missing, import only from @naseej/blox/sdk, and keep scripts focused and maintainable.",
+      "files": []
+    }
+  ]
+}

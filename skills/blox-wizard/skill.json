@@ -1,0 +1,24 @@
+{
+    "name": "blox-wizard",
+    "description": "BLOX wizard implementation for templates and blocks: create, wire, or implement interactive setup flows, questionnaires, and prompt-driven project configuration using @naseej/blox/sdk. Make the wizard target explicit first (template root vs specific block), then choose its storage directory and execution path (lifecycle hook, project script, or manual run) instead of inventing a new wizard engine.",
+    "version": "1.0.0",
+    "cliCompatibility": ">=1.0.0 <=2.0.0",
+    "commands": [
+        "blox"
+    ],
+    "tags": [
+        "blox",
+        "wizard",
+        "interactive",
+        "sdk",
+        "lifecycle-hooks",
+        "template",
+        "block",
+        "prompt-flow",
+        "setup",
+        "project-configuration"
+    ],
+    "agents": [
+        "generic"
+    ]
+}
