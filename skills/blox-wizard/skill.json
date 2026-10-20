@@ -14,7 +14,6 @@
         "lifecycle-hooks",
         "template",
         "block",
-        "prompt-flow",
         "setup",
         "project-configuration"
     ],
